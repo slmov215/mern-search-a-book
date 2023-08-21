@@ -69,7 +69,7 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-    console.log(bookToSave);
+    // console.log(bookToSave);
     try {
       await saveBook({
         variables: {
@@ -80,7 +80,7 @@ const SearchBooks = () => {
         },
         refetchQueries: [{ query: GET_ME }], // Refetch user data after saving the book
       });
-      
+
         console.log(bookToSave);
       if (error) {
         throw new Error("something went wrong!");

@@ -28,20 +28,21 @@ const LoginForm = () => {
     }
 
     try {
-      // const response = await loginUser(userFormData);
+      console.log("Submitting login form with data:", userFormData);
       const response = await loginUser({
         variables: {
           email: userFormData.email,
           password: userFormData.password
         },
       });
+      console.log("Response from backend:", response);
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
+      if (!response) {
+        throw new Error('Something went wrong!');
       }
 
       const { token, user } = await response.data.login;
-      console.log(user);
+      console.log("Logged in user:", user);
       Auth.login(token);
     } catch (err) {
       console.error(err);

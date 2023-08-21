@@ -14,16 +14,18 @@ const resolvers = {
   Mutation: {
     login: async (parent, args) => {
       const user = await User.findOne({ email: args.email });
+      console.log("User found:", user);
       if (!user) {
         throw new Error("user not found");
       }
       const isCorrectPassword = await user.isCorrectPassword(args.password);
-      console.log(!isCorrectPassword);
+      console.log("Is correct password:", isCorrectPassword);
       if (!isCorrectPassword) {
-        
+
         throw new Error("incorrect credentials");
       }
       const token = signToken(user);
+      console.log("Generated token:", token);
       return { token, user };
     },
     addUser: async (parent, args) => {
@@ -44,7 +46,7 @@ const resolvers = {
           },
           {
             new: true,
-            runValidators: true, 
+            runValidators: true,
           }
         );
         return updatedUser;
