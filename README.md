@@ -47,16 +47,16 @@ This project is part of a coding challenge where the existing RESTful API was re
 
 ## Screenshots
 
-![Screenshot 1](./screenshots/screenshot1.png)
+![book-search-login](https://github.com/slmov215/mern-search-a-book/assets/127278005/0fa15a6c-c6fb-4353-9166-104fc1659db5)
 *Animation which shows user logging in.*
 
-![Screenshot 2](./screenshots/screenshot2.png)
+![book-search-saved](https://github.com/slmov215/mern-search-a-book/assets/127278005/7058b902-7a89-4d52-bee7-e20708aa682d)
 *Animation which shows user saving a book.*
 
-![Screenshot 3](./screenshots/screenshot2.png)
+![book-search-delete](https://github.com/slmov215/mern-search-a-book/assets/127278005/e10756e2-8245-452d-80b7-8a3e19c91eb5)
 *Animation which shows user deleting a book.*
 
-![Screenshot 4](./screenshots/screenshot2.png)
+![book-search-logout-signup](https://github.com/slmov215/mern-search-a-book/assets/127278005/bcc16c66-78c0-4f88-9575-db8fcf730a9d)
 *Animation which shows user logging out/signing up.*
 
 ## Deployed Application
