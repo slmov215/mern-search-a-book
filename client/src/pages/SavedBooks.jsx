@@ -14,9 +14,9 @@ import { REMOVE_BOOK } from "../utils/mutations";
 import { GET_ME } from '../utils/queries';
 
 const SavedBooks = () => {
-  const {loading, data} = useQuery(GET_ME);
+  const { loading, data } = useQuery(GET_ME);
   const [removeBook] = useMutation(REMOVE_BOOK);
-  const userData = data?.me
+  const userData = data?.me;
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
@@ -27,15 +27,14 @@ const SavedBooks = () => {
     }
 
     try {
-      // const response = await deleteBook(bookId, token);
       const response = await removeBook({
         variables: {
           bookId: bookId
         },
       });
 
-      if (!response) {
-        throw new Error('something went wrong!');
+      if (!response.data) {
+        throw new Error('Something went wrong while removing the book!');
       }
 
       // upon success, remove book's id from localStorage
@@ -45,14 +44,13 @@ const SavedBooks = () => {
     }
   };
 
-  // if data isn't here yet, say so
   if (loading) {
-    return <h2>LOADING...</h2>;
+    return null; // Return null while loading to avoid rendering content
   }
 
   return (
     <>
-      <div fluid className="text-light bg-dark p-5">
+      <div fluid="true" className="text-light bg-dark p-5">
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
